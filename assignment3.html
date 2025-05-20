@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internships</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #74ebd5, #acb6e5);
+            background-size: 200% 200%;
+            animation: gradientAnimation 10s ease infinite;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            color: #fff;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+            margin: 40px 0;
+            position: relative;
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 4px;
+            background: #3498db;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+            animation: underlineAnimation 2s infinite;
+        }
+
+        @keyframes underlineAnimation {
+            0% { width: 60px; }
+            50% { width: 100px; }
+            100% { width: 60px; }
+        }
+
+        .internship-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            width: 90%;
+            max-width: 1200px;
+            padding: 20px;
+        }
+
+        .internship-card {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .internship-card:hover {
+            transform: translateY(-15px) rotate(1deg);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .internship-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .internship-card:hover::before {
+            opacity: 1;
+        }
+
+        .icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #3498db;
+            transition: transform 0.3s ease;
+        }
+
+        .internship-card:hover .icon {
+            transform: scale(1.2);
+        }
+
+        .internship-card h2 {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .internship-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px 0;
+            text-align: left;
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
+
+        .internship-card:hover ul {
+            opacity: 1;
+        }
+
+        .internship-card ul li {
+            font-size: 1rem;
+            color: #444;
+            margin: 10px 0;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .internship-card ul li:before {
+            content: '✔';
+            position: absolute;
+            left: 0;
+            color: #27ae60;
+            font-size: 1.2rem;
+        }
+
+        .view-details-btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background: linear-gradient(90deg, #3498db, #2980b9);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: transform 0.3s ease, background 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .view-details-btn:hover {
+            background: linear-gradient(90deg, #2980b9, #3498db);
+            transform: scale(1.1);
+        }
+
+        .view-details-btn:active {
+            transform: scale(0.95);
+        }
+
+        .view-details-btn::after {
+            content: '→';
+            position: absolute;
+            right: 15px;
+            opacity: 0;
+            transition: opacity 0.3s ease, right 0.3s ease;
+        }
+
+        .view-details-btn:hover::after {
+            opacity: 1;
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Internships</h1>
+    <div class="internship-container">
+        <div class="internship-card">
+            <div class="icon">🌐</div>
+            <h2>Web Development Internship Program</h2>
+            <ul>
+                <li>Duration: 1 month/2 months</li>
+                <li>Location: Virtual</li>
+                <li>Stipend: -</li>
+                <li>Start date: 05/11/2023</li>
+            </ul>
+            <a href="https://example.com" class="view-details-btn">View Details</a>
+        </div>
+        <div class="internship-card">
+            <div class="icon">📱</div>
+            <h2>App Development Internship Program</h2>
+            <ul>
+                <li>Duration: 1 month/2 months</li>
+                <li>Location: Virtual</li>
+                <li>Stipend: -</li>
+                <li>Start date: 05/11/2023</li>
+            </ul>
+            <a href="https://example.com" class="view-details-btn">View Details</a>
+        </div>
+        <div class="internship-card">
+            <div class="icon">🐍</div>
+            <h2>Python Programming Internship Program</h2>
+            <ul>
+                <li>Duration: 1 month/2 months</li>
+                <li>Location: Virtual</li>
+                <li>Stipend: -</li>
+                <li>Start date: 05/11/2023</li>
+            </ul>
+            <a href="https://example.com" class="view-details-btn">View Details</a>
+        </div>
+        <div class="internship-card">
+            <div class="icon">☕</div>
+            <h2>Java Programming Internship Program</h2>
+            <ul>
+                <li>Duration: 1 month/2 months</li>
+                <li>Location: Virtual</li>
+                <li>Stipend: -</li>
+                <li>Start date: 05/11/2023</li>
+            </ul>
+            <a href="https://example.com" class="view-details-btn">View Details</a>
+        </div>
+    </div>
+</body>
+</html>
